@@ -37,6 +37,7 @@
             <option value="india">India</option>
             <option value="uk">UK</option>
             <option value="germany">Germany</option>
+            <option value="taiwan">Taiwan</option>
           </select>
         </div>
         <div class="hobbies">
@@ -69,6 +70,8 @@
 </template>
 
 <script>
+  import axios from 'axios';
+
   export default {
     data () {
       return {
@@ -76,7 +79,7 @@
         age: null,
         password: '',
         confirmPassword: '',
-        country: 'usa',
+        country: 'taiwan',
         hobbyInputs: [],
         terms: false
       }
@@ -103,6 +106,10 @@
           terms: this.terms
         }
         console.log(formData)
+        // 使用 axios 送出表單資訊到 firebase 的 realtime database，注意 url 後還要接個檔案名稱（因為firebase 是文檔型資料庫）
+        axios.post('https://vuejs-course-lab22-axios.firebaseio.com/users.json', formData)
+          .then(response => console.log(response))
+          .catch(error => console.log(error));
       }
     }
   }
