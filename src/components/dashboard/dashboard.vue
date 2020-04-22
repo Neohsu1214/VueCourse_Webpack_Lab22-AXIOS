@@ -24,7 +24,7 @@ export default {
 
   },
   created: function() { // vue lifecycle hook: created
-    axios.get('https://vuejs-course-lab22-axios.firebaseio.com/users.json')
+    axios.get('/users.json')
       .then(response => {
         console.log(response);
         const data = response.data;
