@@ -15,10 +15,8 @@ export default {
       email: ''
     }
   }, 
-  computed: function() {
-    return {
-
-    }
+  computed: {
+    
   },
   methods: {
 
