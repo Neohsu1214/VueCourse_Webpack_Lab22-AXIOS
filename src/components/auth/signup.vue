@@ -70,7 +70,8 @@
 </template>
 
 <script>
-  import axios from 'axios';
+  //import axios from 'axios';
+  import axios from '../../axios-auth'; // 將原本使用的 global axios 換成 另外宣告的 axios instance，你會發現request header多了自定義的 SOMETHING
 
   export default {
     data () {
